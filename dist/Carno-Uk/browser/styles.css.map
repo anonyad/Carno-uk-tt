@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/styles.scss"],
+  "sourcesContent": ["/* Global Styles */\n\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;\n  background: #f5f7fa;\n  color: #2c3e50;\n  line-height: 1.6;\n}\n\nhtml, body {\n  height: 100%;\n  width: 100%;\n}\n\nbutton {\n  cursor: pointer;\n  font-family: inherit;\n}\n\n/* Utility Classes */\n.btn-primary {\n  background: #3498db;\n  color: white;\n  border: none;\n  padding: 10px 20px;\n  border-radius: 6px;\n  font-weight: 500;\n  transition: background 0.2s;\n}\n\n.btn-primary:hover {\n  background: #2980b9;\n}\n\n.btn-secondary {\n  background: #95a5a6;\n  color: white;\n  border: none;\n  padding: 8px 16px;\n  border-radius: 4px;\n  font-size: 0.9rem;\n  transition: background 0.2s;\n}\n\n.btn-secondary:hover {\n  background: #7f8c8d;\n}\n"],
+  "mappings": ";AAEA;AACE,UAAA;AACA,WAAA;AACA,cAAA;;AAGF;AACE;IAAA,aAAA;IAAA,kBAAA;IAAA,UAAA;IAAA,MAAA;IAAA,MAAA;IAAA,MAAA;IAAA,SAAA;IAAA;AACA,cAAA;AACA,SAAA;AACA,eAAA;;AAGF;AAAA;AACE,UAAA;AACA,SAAA;;AAGF;AACE,UAAA;AACA,eAAA;;AAIF,CAAA;AACE,cAAA;AACA,SAAA;AACA,UAAA;AACA,WAAA,KAAA;AACA,iBAAA;AACA,eAAA;AACA,cAAA,WAAA;;AAGF,CAVA,WAUA;AACE,cAAA;;AAGF,CAAA;AACE,cAAA;AACA,SAAA;AACA,UAAA;AACA,WAAA,IAAA;AACA,iBAAA;AACA,aAAA;AACA,cAAA,WAAA;;AAGF,CAVA,aAUA;AACE,cAAA;;",
+  "names": []
+}

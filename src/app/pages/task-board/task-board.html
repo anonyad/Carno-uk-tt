@@ -1,0 +1,79 @@
+<div class="task-board-container">
+  <header class="board-header">
+    <h1>Task Board</h1>
+    <button class="btn-primary" (click)="onAddTask()">
+      ➕ Add Task
+    </button>
+  </header>
+
+  @if (loading()) {
+    <div class="loading-state">
+      <div class="spinner"></div>
+      <p>Loading tasks...</p>
+    </div>
+  }
+
+  @if (error()) {
+    <div class="error-banner">
+      ⚠️ {{ error() }}
+    </div>
+  }
+
+  <section class="widget-dashboard">
+    <ng-container *dynamicWidgetOutlet="widgetConfigs"></ng-container>
+  </section>
+
+  <section class="board-columns">
+    @for (column of columns; track column.id) {
+      <div class="column">
+        <div class="column-header">
+          <h2>{{ column.name }}</h2>
+          <span class="task-count">{{ getTasksForColumn(column.id).length }}</span>
+        </div>
+
+        <div class="column-content">
+          @if (getTasksForColumn(column.id).length === 0) {
+            <div class="empty-column">
+              <p>No tasks</p>
+            </div>
+          }
+
+          @for (task of getTasksForColumn(column.id); track task.id) {
+            <app-task-card
+              [task]="task"
+            />
+
+            <div class="task-actions">
+              <label>Move to:</label>
+              <select
+                (change)="onMoveTask(task.id, $any($event.target).value, task.columnId); $any($event.target).value = ''"
+                class="column-selector"
+              >
+                <option value="" disabled selected>Select column...</option>
+                @for (col of columns; track col.id) {
+                  @if (col.id !== task.columnId) {
+                    <option [value]="col.id">
+                      {{ col.name }}
+                    </option>
+                  }
+                }
+              </select>
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </section>
+
+  <section class="debug-info">
+    <details open>
+      <summary>Priority Breakdown (Debug)</summary>
+      <pre>{{ priorityBreakdown() | json }}</pre>
+      <p>Completion Rate: {{ completionRate() }}%</p>
+      <p>Total Tasks: {{ allTasks().length }}</p>
+      <p>High Priority Count: {{ priorityBreakdown()['high'] }}</p>
+      <p>Critical Priority Count: {{ priorityBreakdown()['critical'] }}</p>
+      <p>High Priority Widget Value: {{ highPriorityData().value }}</p>
+    </details>
+  </section>
+</div>

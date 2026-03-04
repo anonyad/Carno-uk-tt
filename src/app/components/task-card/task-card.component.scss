@@ -1,0 +1,67 @@
+.task-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: white;
+}
+
+.task-card.priority-low { border-left: 4px solid #4caf50; }
+.task-card.priority-medium { border-left: 4px solid #ff9800; }
+.task-card.priority-high { border-left: 4px solid #f44336; }
+.task-card.priority-critical { border-left: 4px solid #9c27b0; }
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-details {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #eee;
+}
+
+.task-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 0.875rem;
+}
+
+.priority {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.priority-low { background: #e8f5e9; color: #2e7d32; }
+.priority-medium { background: #fff3e0; color: #e65100; }
+.priority-high { background: #ffebee; color: #c62828; }
+.priority-critical { background: #f3e5f5; color: #6a1b9a; }
+
+.overdue-badge {
+  background: #ffcdd2;
+  color: #c62828;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+button {
+  padding: 4px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f5f5f5;
+}

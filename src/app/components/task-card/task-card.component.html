@@ -1,0 +1,31 @@
+<div class="task-card" [class]="priorityClass()">
+  <div class="task-header">
+    <h3>{{ task().title }}</h3>
+    <button (click)="toggleExpanded()">
+      {{ isExpanded() ? '▼' : '▶' }}
+    </button>
+  </div>
+
+  @if (isExpanded()) {
+    <div class="task-details">
+      <p>{{ task().description || 'No description' }}</p>
+      <div class="task-meta">
+            <span class="priority" [class]="priorityClass()">
+              {{ task().priority }}
+            </span>
+        @if (task().assignee) {
+          <span class="assignee">{{ task().assignee }}</span>
+        }
+        <span class="date">{{ formattedDate() }}</span>
+        @if (isOverdue()) {
+          <span class="overdue-badge">⚠️ Overdue</span>
+        }
+      </div>
+    </div>
+  }
+
+  <div class="task-actions">
+    <button (click)="onEdit()">Edit</button>
+    <button (click)="onDelete()">Delete</button>
+  </div>
+</div>

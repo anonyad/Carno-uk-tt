@@ -1,0 +1,23 @@
+<div class="widget progress-widget" [class]="statusClass()">
+  <div class="widget-header">
+    <span class="widget-label">{{ data().label }}</span>
+    @if (data().showPercentage) {
+      <span class="widget-percentage">{{ percentage() }}%</span>
+    }
+  </div>
+
+  <div class="progress-bar">
+    <div
+      class="progress-fill"
+      [class]="statusClass()"
+      [style.width.%]="percentage()">
+    </div>
+  </div>
+
+  <div class="widget-footer">
+    <span class="widget-value">{{ data().value }} / {{ data().max }}</span>
+    @if (data().tooltip) {
+      <span class="widget-tooltip">{{ data().tooltip }}</span>
+    }
+  </div>
+</div>

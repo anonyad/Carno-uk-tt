@@ -1,0 +1,67 @@
+.widget {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid #ddd;
+  min-width: 200px;
+}
+
+.widget-icon {
+  font-size: 2rem;
+}
+
+.widget-content {
+  flex: 1;
+}
+
+.widget-label {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.widget-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.widget-tooltip {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+/* Status-based styling */
+.status-success {
+  border-left: 4px solid #4caf50;
+}
+
+.status-success .widget-value {
+  color: #4caf50;
+}
+
+.status-warning {
+  border-left: 4px solid #ff9800;
+}
+
+.status-warning .widget-value {
+  color: #ff9800;
+}
+
+.status-error {
+  border-left: 4px solid #f44336;
+}
+
+.status-error .widget-value {
+  color: #f44336;
+}
+
+.status-neutral {
+  border-left: 4px solid #9e9e9e;
+}
+
+.status-neutral .widget-value {
+  color: #9e9e9e;
+}

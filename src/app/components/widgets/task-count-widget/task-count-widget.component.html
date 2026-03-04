@@ -1,0 +1,12 @@
+<div class="widget task-count-widget" [class]="statusClass()">
+  <div class="widget-icon">
+    {{ data().icon || '📊' }}
+  </div>
+  <div class="widget-content">
+    <div class="widget-label">{{ data().label }}</div>
+    <div class="widget-value">{{ data().value }}</div>
+  </div>
+  @if (data().tooltip) {
+    <div class="widget-tooltip">{{ data().tooltip }}</div>
+  }
+</div>
